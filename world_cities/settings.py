@@ -25,7 +25,7 @@ SECRET_KEY = 'q66hz#!!%o0(wv-s%2-nw8m55a)y6(4&g(3p!r570i9ngiq_@^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
