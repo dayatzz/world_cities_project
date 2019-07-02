@@ -11,7 +11,7 @@ class CityViewset(viewsets.ModelViewSet):
         countries = self.request.query_params.get('countries') or ''
         if countries:
             countries = countries.split(',')
-            return City.objects.filter(country__in=countries)
+            return City.objects.filter(country__in=countries).order_by('name')
         return City.objects.all()
 
 

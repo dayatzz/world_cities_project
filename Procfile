@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath world_cities world_cities.wsgi --log-file=-
