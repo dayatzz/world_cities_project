@@ -27,7 +27,11 @@ class AirportViewset(viewsets.ReadOnlyModelViewSet):
     
     def get_queryset(self):
         countries = self.request.query_params.get('countries') or ''
+        codes = self.request.query_params.get('codes') or ''
         if countries:
             countries = countries.split(',')
             return Airport.objects.filter(country__in=countries).order_by('country')
+        if codes:
+            codes = codes.split(',')
+            return Airport.objects.filter(code__in=codes).order_by('country')
         return Airport.objects.order_by('country')
